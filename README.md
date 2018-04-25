@@ -1,6 +1,6 @@
 Symfony 4 test (Exchange APP)
 
-- You need to have PHP 7.1 or more to make this small application runs.
+- You need to have PHP 7.1 or higher to make this small application runs.
 - You need to have composer in your computer
 
 
