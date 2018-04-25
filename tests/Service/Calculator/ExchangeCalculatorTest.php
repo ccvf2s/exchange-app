@@ -1,10 +1,25 @@
 <?php
 
-/**
- * Copyright © 2018 UFirst GmbH.
- * created by: dmakome
- */
-class ExchangeCalculatorTest
+namespace App\Tests\Service\Calculator;
+
+use App\Service\Calculator\ExchangeCalculator;
+use PHPUnit\Framework\TestCase;
+
+class ExchangeCalculatorTest extends TestCase
 {
+
+    public function testExchange()
+    {
+        $exchangeCalculator = new ExchangeCalculator();
+        $this->assertNull($exchangeCalculator->exchange(100, 'EUR', 'ZAR'));
+
+        $this->assertEquals(100, $exchangeCalculator->exchange(100, 'ZAR', 'ZAR'));
+        $this->assertEquals(100, $exchangeCalculator->exchange(100, 'USD', 'USD'));
+        $this->assertEquals(100, $exchangeCalculator->exchange(100, 'GBP', 'GBP'));
+        $this->assertEquals(100 * 0.05164, $exchangeCalculator->exchange(100, 'ZAR', 'GBP'));
+        $this->assertEquals(100 / 0.05164, $exchangeCalculator->exchange(100, 'GBP', 'ZAR'));
+        $this->assertEquals(100 * 0.08084, $exchangeCalculator->exchange(100, 'ZAR', 'USD'));
+        $this->assertEquals(100 / 0.08084, $exchangeCalculator->exchange(100, 'USD', 'ZAR'));
+    }
 
 }

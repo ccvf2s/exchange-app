@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme form "bootstrap_4_layout.html.twig" %}
+
+{% block body %}
+    <div class="row">
+        <div class="col border">
+            <h1>Exchange form</h1>
+            {{ form_start(form, {'attr': {'novalidate': 'novalidate', 'label': false}}) }}
+                {{ form_row(form) }}
+                <button type="submit" class="btn btn-info">Exchange</button>
+                <hr>
+            {{ form_end(form) }}
+        </div>
+        {% if exchangeAmount is defined and exchangeAmount is not null %}
+            <div class="col">
+                <button class="btn btn-success">{{ exchangeAmount }}</button>
+                <hr>
+            </div>
+        {% endif %}
+    </div>
+{% endblock %}
