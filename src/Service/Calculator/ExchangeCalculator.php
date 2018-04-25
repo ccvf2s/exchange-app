@@ -29,10 +29,10 @@ class ExchangeCalculator
         }
 
         if (isset(CurrencyMapping::MAPPING_EXCHANGE[$fromTo])) {
-            return $amount * CurrencyMapping::MAPPING_EXCHANGE[$fromTo];
+            return round($amount * CurrencyMapping::MAPPING_EXCHANGE[$fromTo], 2);
         }
 
-        return $amount / CurrencyMapping::MAPPING_EXCHANGE[$toFrom];
+        return round($amount / CurrencyMapping::MAPPING_EXCHANGE[$toFrom], 2);
     }
 
 }
