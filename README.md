@@ -5,7 +5,7 @@ Symfony 4 test (Exchange APP)
 
 
 STEPS:
-- 1. `git clone git@github.com:ccvf2s/exchange-app.git`
-- 2. `composer install`
-- 3. `php -S 127.0.0.1:8000 -t public`
-- 4. Browse to the http://localhost:8000/ URL.
+- `git clone git@github.com:ccvf2s/exchange-app.git`
+- `composer install`
+- `php -S 127.0.0.1:8000 -t public`
+- Browse to the http://localhost:8000/ URL.
